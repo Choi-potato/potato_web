@@ -78,6 +78,17 @@ h2 {
     font-size: 24px;
 }
 
+.form-group {
+    margin-left: 100px;
+    display: flex;
+    align-items: center; /* 수직 정렬 */
+    gap: 10px; /* label과 select 사이 여백 */
+}
+
+.form-label {
+    font-weight: bold; /* label 강조 */
+}
+
 table {
     width: 100%;
     border-collapse: collapse;

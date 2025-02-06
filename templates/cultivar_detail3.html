@@ -27,7 +27,7 @@
         </header>
 
         <div class="container">
-            <h2>고령지농업연구소 감자 유전자원 데이터베이스</h2>
+            <h2>고령지농업연구소 감자 유전자원 데이터베이스cv2</h2>
             <hr class="line2" color="#006400">
             <table>
                 <tr>
@@ -48,16 +48,16 @@
             <div class="form-group">
                 <label for="Depths">Pedigree depth</label>
                 <select id="Depths" name="depth" onchange="redirectPage()">
-                    <option value="1" selected>1</option>
+                    <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="3">3</option>
+                    <option value="3"selected>3</option>
                 </select>
             </div>
             <br>
 
             {% if cultivar %}
 
-                <img src="{{ url_for('static', filename=cultivar.pedigree) }}" alt="{{ cultivar.name }} pedigree" usemap="#family-map" width="600">
+                <img src="{{ url_for('static', filename=cultivar.pedigree3) }}" alt="{{ cultivar.name }} pedigree" usemap="#family-map" width="800">
                 
                 <map name="family-map">
                     {% set pedigree_positions = {
@@ -66,11 +66,24 @@
                         cultivar.get('female', 'Unknown'): (2,3)
                     } %}
 
-                    <area shape="rect" coords="70,185,160,215" href="#" onclick="goToCultivarDetail('{{ cultivar.name }}')" alt="{{ cultivar.name }}">
-                    <area shape="rect" coords="455,60,545,90" href="#" onclick="goToCultivarDetail('{{ cultivar.male }}')" alt="{{ cultivar.male }}">
-                    <area shape="rect" coords="455,310,545,340" href="#" onclick="goToCultivarDetail('{{ cultivar.female }}')" alt="{{ cultivar.female }}">
+                    <area shape="rect" coords="110,235,200,270" href="#" onclick="goToCultivarDetail('{{ cultivar.name }}')" alt="{{ cultivar.name }}">
+                    <area shape="rect" coords="277,125,367,155" href="#" onclick="goToCultivarDetail('{{ cultivar.male }}')" alt="{{ cultivar.male }}">
+                    <area shape="rect" coords="277,328,367,358" href="#" onclick="goToCultivarDetail('{{ cultivar.female }}')" alt="{{ cultivar.female }}">
+                    <area shape="rect" coords="450,100,540,130" href="#" onclick="goToCultivarDetail('{{ cultivar.male_male }}')" alt="{{ cultivar.male_male }}">
+                    <area shape="rect" coords="450,190,540,220" href="#" onclick="goToCultivarDetail('{{ cultivar.male_female }}')" alt="{{ cultivar.male_female }}">
+                    <area shape="rect" coords="450,284,540,314" href="#" onclick="goToCultivarDetail('{{ cultivar.female_male }}')" alt="{{ cultivar.female_male }}">
+                    <area shape="rect" coords="450,374,540,404" href="#" onclick="goToCultivarDetail('{{ cultivar.female_female }}')" alt="{{ cultivar.female_female }}">
+                    <area shape="rect" coords="620,80,710,110" href="#" onclick="goToCultivarDetail('{{ cultivar.male_male_male }}')" alt="{{ cultivar.male_male_male }}">
+                    <area shape="rect" coords="620,122,710,152" href="#" onclick="goToCultivarDetail('{{ cultivar.male_male_female }}')" alt="{{ cultivar.male_male_female }}">
+                    <area shape="rect" coords="620,168,710,198" href="#" onclick="goToCultivarDetail('{{ cultivar.male_female_male }}')" alt="{{ cultivar.male_female_male }}">
+                    <area shape="rect" coords="620,215,710,245" href="#" onclick="goToCultivarDetail('{{ cultivar.male_female_female }}')" alt="{{ cultivar.male_female_female }}">
+                    <area shape="rect" coords="620,260,710,290" href="#" onclick="goToCultivarDetail('{{ cultivar.female_male_male }}')" alt="{{ cultivar.female_male_male }}">
+                    <area shape="rect" coords="620,302,710,332" href="#" onclick="goToCultivarDetail('{{ cultivar.female_male_female }}')" alt="{{ cultivar.female_male_female }}">
+                    <area shape="rect" coords="620,348,710,378" href="#" onclick="goToCultivarDetail('{{ cultivar.female_female_male }}')" alt="{{ cultivar.female_female_male }}">
+                    <area shape="rect" coords="620,395,710,425" href="#" onclick="goToCultivarDetail('{{ cultivar.female_female_female }}')" alt="{{ cultivar.female_female_female }}">
 
                 </map>
+
 
                 <script>
                     function redirectPage() {
