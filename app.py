@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for, escape
+from flask import Flask, render_template, request, redirect, url_for
 import numpy as np
 import matplotlib.pyplot as Plt
 import io
 import base64
+from markupsafe import escape
 
 app = Flask(__name__)
 
