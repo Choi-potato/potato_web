@@ -42,7 +42,7 @@
                     <th>수량성</th>
                 </tr>
                     <tr>
-                        <td>Mangang</td>
+                        <td onclick="window.location.href='https://potato-web-p8jl.onrender.com/cultivar/mangang';" style="cursor: pointer;"> Mangang </td>
                         <td>만강</td>
                         <td>it1</td>
                         <td>0</td>
@@ -714,37 +714,36 @@
         document.addEventListener("DOMContentLoaded", function () {
             const table = document.querySelector("table");
             const headers = table.querySelectorAll("th");
-            let sortDirection = {}; // 각 열의 정렬 방향 저장
+            let sortDirection = {}; // sorting direction
         
             headers.forEach((header, columnIndex) => {
                 header.addEventListener("click", () => {
                     const tbody = table.querySelector("tbody") || table;
-                    const rows = Array.from(tbody.querySelectorAll("tr")).slice(1); // 첫 번째 행(헤더)은 제외
+                    const rows = Array.from(tbody.querySelectorAll("tr")).slice(1); // exclude first header
         
-                    // 기존 정렬 상태 확인 (토글)
                     const currentDirection = sortDirection[columnIndex] || "asc";
                     const isAscending = currentDirection === "asc";
         
-                    // 모든 헤더에서 기존 정렬 아이콘 제거
+                    // original sortDirection remove
                     headers.forEach(h => h.classList.remove("asc", "desc"));
         
-                    // 새로운 정렬 방향 설정
+                    // new sortDirection
                     sortDirection[columnIndex] = isAscending ? "desc" : "asc";
                     header.classList.add(isAscending ? "desc" : "asc");
         
-                    // 데이터 타입 체크 후 정렬
+                    // Check data type and sort
                     rows.sort((rowA, rowB) => {
                         const cellA = rowA.cells[columnIndex].innerText.trim();
                         const cellB = rowB.cells[columnIndex].innerText.trim();
         
-                        // 숫자로 변환 가능한 경우 숫자로 비교, 아니면 문자열 비교
+                        // compare with int or str
                         const isNumber = !isNaN(cellA) && !isNaN(cellB);
                         return isNumber
                             ? (isAscending ? cellA - cellB : cellB - cellA)
                             : (isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA));
                     });
         
-                    // 테이블에 다시 추가
+                    // append to table
                     rows.forEach(row => tbody.appendChild(row));
                 });
             });
