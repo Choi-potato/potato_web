@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>품종 리스트</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cultivar_list.css') }}">
+</head>
+<body>
+    <div class="page">
+        <header class="site-header">
+            <div class="HARI-section">
+                <a href="https://www.nics.go.kr/index.do" class="logo" title="www.hariwebsite" data-wm-linkcode="CO3">
+                <img class="logo_img" src="{{ url_for('static', filename='main.png') }}" alt="Highland Agriculture Research Institute">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('home') }}">
+                            메인
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('cultivar_list') }}">
+                            품종명
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h2>고령지농업연구소 감자 품종 리스트</h2>
+            <h3>눌러 정렬 가능</h3>
+            <hr class="line2" color="#006400">
+            <table border="1">
+                <tr>
+                    <th>영명</th>
+                    <th>국명</th>
+                    <th>IT number</th>
+                    <th>수량성</th>
+                </tr>
+                    <tr>
+                        <td>Mangang</td>
+                        <td>만강</td>
+                        <td>it1</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Gangseon</td>
+                        <td>강선</td>
+                        <td>it2</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Tamna</td>
+                        <td>탐나</td>
+                        <td>it3</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Dano</td>
+                        <td>다노</td>
+                        <td>it4</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Golden Ball</td>
+                        <td>골든볼</td>
+                        <td>it5</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>ArirangNo.1</td>
+                        <td>아리랑1호</td>
+                        <td>it6</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>ArirangNo.2</td>
+                        <td>아리랑2호</td>
+                        <td>it7</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Oryun</td>
+                        <td>오륜</td>
+                        <td>it8</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Pungnong</td>
+                        <td>풍농</td>
+                        <td>it9</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daegwang</td>
+                        <td>대광</td>
+                        <td>it10</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Namjak</td>
+                        <td>남작</td>
+                        <td>it11</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Sinnamjak</td>
+                        <td>신남작</td>
+                        <td>it12</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Namseon</td>
+                        <td>남선</td>
+                        <td>it13</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Geumseon</td>
+                        <td>금선</td>
+                        <td>it14</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Eunseon</td>
+                        <td>은선</td>
+                        <td>it15</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Suseon</td>
+                        <td>수선</td>
+                        <td>it16</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Jinseon</td>
+                        <td>진선</td>
+                        <td>it17</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Chubaek</td>
+                        <td>추백</td>
+                        <td>it18</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Chudong</td>
+                        <td>추동</td>
+                        <td>it19</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Chugang</td>
+                        <td>추강</td>
+                        <td>it20</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Chuyoung</td>
+                        <td>추영</td>
+                        <td>it21</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Bangul</td>
+                        <td>방울</td>
+                        <td>it22</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Saebong</td>
+                        <td>새봉</td>
+                        <td>it23</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Jeseo</td>
+                        <td>제서</td>
+                        <td>it24</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Dami</td>
+                        <td>다미</td>
+                        <td>it25</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Jungmo9001</td>
+                        <td>중모9001</td>
+                        <td>it26</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Jowon</td>
+                        <td>조운</td>
+                        <td>it27</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Jopoong</td>
+                        <td>조풍</td>
+                        <td>it28</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Seohong</td>
+                        <td>서홍</td>
+                        <td>it29</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Haryeong</td>
+                        <td>하령</td>
+                        <td>it30</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daeseo</td>
+                        <td>대서</td>
+                        <td>it31</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Goun</td>
+                        <td>고운</td>
+                        <td>it32</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Doobaek</td>
+                        <td>두백</td>
+                        <td>it33</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daeji</td>
+                        <td>대지</td>
+                        <td>it34</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Sepoong</td>
+                        <td>세풍</td>
+                        <td>it35</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Sumi</td>
+                        <td>수미</td>
+                        <td>it36</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Hongseon</td>
+                        <td>홍선</td>
+                        <td>it37</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Jayoung</td>
+                        <td>자영</td>
+                        <td>it38</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Hongyoung</td>
+                        <td>홍영</td>
+                        <td>it39</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Hongjiseul</td>
+                        <td>홍지슬</td>
+                        <td>it40</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Gahwang</td>
+                        <td>가황</td>
+                        <td>it41</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Suji</td>
+                        <td>수지</td>
+                        <td>it42</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Early Fri</td>
+                        <td>얼리프라이</td>
+                        <td>it43</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Golden Egg</td>
+                        <td>골든에그</td>
+                        <td>it44</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Hichip</td>
+                        <td>하이칩</td>
+                        <td>it45</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Jaekyo-P-14</td>
+                        <td>재교p14</td>
+                        <td>it46</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Jaekyo-P-15</td>
+                        <td>재교p15</td>
+                        <td>it47</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan2-41</td>
+                        <td>대관2-41</td>
+                        <td>it48</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan2-56</td>
+                        <td>대관2-56</td>
+                        <td>it49</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Alan(Daekwan2-57)</td>
+                        <td>아란</td>
+                        <td>it50</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Geumnaru(Daekwan2-58)</td>
+                        <td>금나루</td>
+                        <td>it51</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan2-60</td>
+                        <td>대관2-60</td>
+                        <td>it52</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Chuwon(Daekwan2-62)</td>
+                        <td>추원</td>
+                        <td>it53</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan2-63</td>
+                        <td>대관2-63</td>
+                        <td>it54</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan2-65</td>
+                        <td>대관2-65</td>
+                        <td>it55</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan2-66</td>
+                        <td>대관2-66</td>
+                        <td>it56</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan2-67</td>
+                        <td>대관2-67</td>
+                        <td>it57</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan2-68</td>
+                        <td>대관2-68</td>
+                        <td>it58</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan2-69</td>
+                        <td>대관2-69</td>
+                        <td>it59</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>DaeKwan1-123</td>
+                        <td>대관1-123</td>
+                        <td>it60</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>DaeKwan1-129</td>
+                        <td>대관1-129</td>
+                        <td>it61</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daeback(Daekwan1-139)</td>
+                        <td>대백</td>
+                        <td>it62</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Dawon(DaeKwan1-143)</td>
+                        <td>다원</td>
+                        <td>it63</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan1-144</td>
+                        <td>대관1-144</td>
+                        <td>it64</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Dagam(Daekwan1-145)</td>
+                        <td>다감</td>
+                        <td>it65</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan1-146</td>
+                        <td>대관1-146</td>
+                        <td>it66</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Poseuli(Daekwan1-148)</td>
+                        <td>포슬이</td>
+                        <td>it67</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan1-149</td>
+                        <td>대관1-149</td>
+                        <td>it68</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan1-152</td>
+                        <td>대관1-152</td>
+                        <td>it69</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan1-153</td>
+                        <td>대관1-153</td>
+                        <td>it70</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan1-158</td>
+                        <td>대관1-158</td>
+                        <td>it71</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Jangwon(Daekwan1-159)</td>
+                        <td>장원</td>
+                        <td>it72</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Daekwan1-160</td>
+                        <td>대관1-160</td>
+                        <td>it73</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Spunta</td>
+                        <td>Spunta</td>
+                        <td>it74</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Raja</td>
+                        <td>Raja</td>
+                        <td>it75</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Eba</td>
+                        <td>Eba</td>
+                        <td>it76</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Elkana</td>
+                        <td>Elkana</td>
+                        <td>it77</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Sante</td>
+                        <td>Sante</td>
+                        <td>it78</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Tanja</td>
+                        <td>Tanja</td>
+                        <td>it79</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Papa Negras</td>
+                        <td>Papa Negras</td>
+                        <td>it80</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Laura</td>
+                        <td>Laura</td>
+                        <td>it81</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>May Queen</td>
+                        <td>May Queen</td>
+                        <td>it82</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Pentland Crown</td>
+                        <td>Pentland Crown</td>
+                        <td>it83</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Pentland Dell</td>
+                        <td>Pentland Dell</td>
+                        <td>it84</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Dark Red Norland_hari</td>
+                        <td>Dark Red Norland_hari</td>
+                        <td>it85</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Penobscot</td>
+                        <td>Penobscot</td>
+                        <td>it86</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Bake King</td>
+                        <td>Bake King</td>
+                        <td>it87</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Triumph</td>
+                        <td>Triumph</td>
+                        <td>it88</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Rosa</td>
+                        <td>Rosa</td>
+                        <td>it89</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Russet Norkotah_hari</td>
+                        <td>Russet Norkotah_hari</td>
+                        <td>it90</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Dakota Pearl_hari</td>
+                        <td>Dakota Pearl_hari</td>
+                        <td>it91</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Gemchip_hari</td>
+                        <td>Gemchip_hari</td>
+                        <td>it92</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Norking Russet</td>
+                        <td>Norking Russet</td>
+                        <td>it93</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Red Moon_hari</td>
+                        <td>Red Moon_hari</td>
+                        <td>it94</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Norin1_hari</td>
+                        <td>Norin1_hari</td>
+                        <td>it95</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Arachy</td>
+                        <td>Arachy</td>
+                        <td>it96</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Red Rascal</td>
+                        <td>Red Rascal</td>
+                        <td>it97</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Belarus3</td>
+                        <td>Belarus3</td>
+                        <td>it98</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Russia12</td>
+                        <td>Russia12</td>
+                        <td>it99</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Tamasha</td>
+                        <td>Tamasha</td>
+                        <td>it100</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>Kexin4</td>
+                        <td>Kexin4</td>
+                        <td>it101</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>76B54-2</td>
+                        <td>76B54-2</td>
+                        <td>it102</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>HAt-22</td>
+                        <td>HAt-22</td>
+                        <td>it103</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>CO09551_7W</td>
+                        <td>CO09551_7W</td>
+                        <td>it104</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>CO97043_14W</td>
+                        <td>CO97043_14W</td>
+                        <td>it105</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>R5</td>
+                        <td>R5</td>
+                        <td>it106</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>R6</td>
+                        <td>R6</td>
+                        <td>it107</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>1833</td>
+                        <td>1833</td>
+                        <td>it108</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>2048</td>
+                        <td>2048</td>
+                        <td>it109</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>B9482-3</td>
+                        <td>B9482-3</td>
+                        <td>it110</td>
+                        <td>0</td>
+                </tr>
+                </table>
+            
+        </div>
+    </div>
+
+    <footer class="bottom">
+        <p>&copy; 2025 My Website. All rights reserved. Last update: 2025.02.04</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const table = document.querySelector("table");
+            const headers = table.querySelectorAll("th");
+            let sortDirection = {}; // 각 열의 정렬 방향 저장
+        
+            headers.forEach((header, columnIndex) => {
+                header.addEventListener("click", () => {
+                    const tbody = table.querySelector("tbody") || table;
+                    const rows = Array.from(tbody.querySelectorAll("tr")).slice(1); // 첫 번째 행(헤더)은 제외
+        
+                    // 기존 정렬 상태 확인 (토글)
+                    const currentDirection = sortDirection[columnIndex] || "asc";
+                    const isAscending = currentDirection === "asc";
+        
+                    // 모든 헤더에서 기존 정렬 아이콘 제거
+                    headers.forEach(h => h.classList.remove("asc", "desc"));
+        
+                    // 새로운 정렬 방향 설정
+                    sortDirection[columnIndex] = isAscending ? "desc" : "asc";
+                    header.classList.add(isAscending ? "desc" : "asc");
+        
+                    // 데이터 타입 체크 후 정렬
+                    rows.sort((rowA, rowB) => {
+                        const cellA = rowA.cells[columnIndex].innerText.trim();
+                        const cellB = rowB.cells[columnIndex].innerText.trim();
+        
+                        // 숫자로 변환 가능한 경우 숫자로 비교, 아니면 문자열 비교
+                        const isNumber = !isNaN(cellA) && !isNaN(cellB);
+                        return isNumber
+                            ? (isAscending ? cellA - cellB : cellB - cellA)
+                            : (isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA));
+                    });
+        
+                    // 테이블에 다시 추가
+                    rows.forEach(row => tbody.appendChild(row));
+                });
+            });
+        });
+        </script>
+
+</body>
+</html>

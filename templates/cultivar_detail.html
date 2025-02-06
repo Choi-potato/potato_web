@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고령지농업연구소 감자 유전자원</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cultivar_detail.css') }}">
+</head>
+<body>
+    <div class="page">
+        <header class="site-header">
+            <div class="HARI-section">
+                <a href="https://www.nics.go.kr/index.do" class="logo" title="www.hariwebsite" data-wm-linkcode="CO3">
+                <img class="logo_img" src="{{ url_for('static', filename='main.png') }}" alt="Highland Agriculture Research Institute">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('home') }}">메인</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('cultivar_list') }}">품종명</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h2>고령지농업연구소 감자 유전자원 데이터베이스</h2>
+            <hr class="line2" color="#006400">
+            <table>
+                <tr>
+                    <th>영명</th>
+                    <th>국명</th>
+                    <th>IT number</th>
+                </tr>
+                <tr>
+                    <td>{{cultivar.name}}</td>
+                    <td>{{cultivar.korean_name}}</td>
+                    <td>{{cultivar.it_number}}</td>
+                </tr>
+            </table>
+
+            {% if cultivar %}
+
+                <img src="{{ url_for('static', filename=cultivar.pedigree) }}" alt="{{ cultivar.name }} pedigree" usemap="#family-map" width="600">
+                
+                <map name="family-map">
+                    {% set pedigree_positions = {
+                        cultivar.name: (1,2),
+                        cultivar.get('male', 'Unknown'): (2,1),
+                        cultivar.get('female', 'Unknown'): (2,3)
+                    } %}
+
+                    <area shape="rect" coords="70,185,160,215" href="#" onclick="goToCultivarDetail('{{ cultivar.name }}')" alt="{{ cultivar.name }}">
+              
+                    <area shape="rect" coords="455,60,545,90" href="#" onclick="goToCultivarDetail('{{ cultivar.male }}')" alt="{{ cultivar.male }}">
+              
+                    <area shape="rect" coords="455,310,545,340" href="#" onclick="goToCultivarDetail('{{ cultivar.female }}')" alt="{{ cultivar.female }}">
+
+                </map>
+                                
+                <script>
+                    function goToCultivarDetail(name) {
+                        if (!name || name === "None") {
+                            window.location.href = "/no_results";
+                        } else {
+                            window.location.href = "/cultivar/" + encodeURIComponent(name);
+                        }
+                    }
+                </script>
+                <br>
+                <table>
+                    <tr>
+                        <td>
+                          <img src="{{ url_for('static', filename=cultivar.img) }}" alt="{{ cultivar.name }} image" style="margin-top: 20px; max-width: 100%; height: auto;">
+                        </td>
+                        <td style="text-align:left;">
+                            Category: {{ cultivar.category }}<br>
+                            Market usage: {{ cultivar.market }}<br>
+                            Breeding project: {{ cultivar.breeding_project }}<br>
+                            Release year: {{ cultivar.release_year }}<br><br>
+                            Yield:{{ cultivar.yie }}<br>
+                            Length-width ratio:0<br>
+                            Maturity: {{ cultivar.maturity }}<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{{ url_for('static', filename=cultivar.yield_graph) }}" alt="{{ cultivar.name }} yield graph" style="margin-top: 20px; max-width: 100%; height: auto;">
+                        </td>
+                        <td style="text-align:left;">
+                            <img src="{{ url_for('static', filename=cultivar.lw_graph) }}" alt="{{ cultivar.name }} length width ratio graph" style="margin-top: 20px; max-width: 100%; height: auto;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">
+                            생산량 정규분포 그래프: 대조 수미
+                        </td>
+                        <td style="text-align:center;">
+                            장폭비 정규분포 그래프: 대조 수미
+                        </td>
+                    </tr>
+                </table>
+
+            {% else %}
+                <p>해당 품종에 대한 정보가 없습니다.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <footer class="bottom">
+        <p>&copy; 2025 My Website. All rights reserved. Last update: 2025.02.04</p>
+    </footer>
+</body>
+</html>

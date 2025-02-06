@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고령지농업연구소 감자 유전자원</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}">
+</head>
+<body>
+    <div class="page">
+        <header class="site-header">
+            <div class="HARI-section">
+                <a href="https://www.nics.go.kr/index.do" class="logo" title="www.hariwebsite" data-wm-linkcode="CO3">
+                <img class="logo_img" src="{{ url_for('static', filename='main.png') }}" alt="Highland Agriculture Research Institute">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('home') }}">
+                            메인
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{  url_for('cultivar_list') }}">
+                            품종명
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h2>고령지농업연구소 감자 유전자원 데이터베이스</h2>
+            <hr class="line2" color="#006400">
+            <ul>
+                <font size="4" style="font-weight: bold;">
+                    감자 유전자원 검색
+                </font>
+                <br>
+                <font size="3" style="font-weight: bold;">
+                    ○ 감자 품종명 검색
+                </font>
+                <br>
+                <font size="3" style="font-weight: bold;">
+                    ○ 한국어 혹은 영어로 검색 가능
+                </font>
+                <br>
+                <font size="3" style="font-weight: bold;">
+                    ○ 감자 품종 목록은 오른쪽 위 품종명을 통해 확인 가능
+                </font>
+            </ul>
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td>
+                            <form botid="0" method="POST" action="{{ url_for('search') }}">
+                                <table border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <b>
+                                                        <font size="3" style="font-weight: bold; color: #006400">
+                                                            아래에 품종명 입력 (한/영)
+                                                        </font>
+                                                    </b>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <input name="name" size="20">
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <input type="Submit">
+                                                    <input type="Reset">
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="bottom">
+        <p>&copy; 2025 My Website. All rights reserved. Last update: 2025.02.04</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고령지농업연구소 감자 유전자원</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}">
+</head>
+<body>
+    <div class="page">
+        <header class="site-header">
+            <div class="HARI-section">
+                <a href="https://www.nics.go.kr/index.do" class="logo" title="www.hariwebsite" data-wm-linkcode="CO3">
+                <img class="logo_img" src="{{ url_for('static', filename='main.png') }}" alt="Highland Agriculture Research Institute">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('home') }}">
+                            메인
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{  url_for('cultivar_list') }}">
+                            품종명
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h2>고령지농업연구소 감자 유전자원 데이터베이스</h2>
+            <hr class="line2" color="#006400">
+            <ul>
+                <font size="4" style="font-weight: bold;">
+                    데이터베이스 내 없는 품종입니다.
+                </font>
+                <br>
+                <font size="4" style="font-weight: bold;">
+                    품종명 혹은 IT 번호 확인
+                </font>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="bottom">
+        <p>&copy; 2025 My Website. All rights reserved. Last update: 2025.02.04</p>
+    </footer>
+
+</body>
+</html>
