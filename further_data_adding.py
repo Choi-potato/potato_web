@@ -10,8 +10,8 @@ for i in file:
     yie =0 
     img = 'potatoes/' + name + '.png'
     pedigree = 'pedigree/' + name + '.png'
-    pedigree2 = 'pedigree/' + name + '2.png'
-    pedigree3 = 'pedigree/' + name + '3.png'
+    pedigree2 = 'pedigree/' + name + '__2.png'
+    pedigree3 = 'pedigree/' + name + '__3.png'
     alt_name = contents[6]
     alt_english_name = contents[7]
     male = contents[8]
