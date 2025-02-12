@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고령지농업연구소 감자 유전자원</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flesh_color_result.css') }}">
+</head>
+<body>
+    <div class="page">
+        <header class="site-header">
+            <div class="HARI-section">
+                <a href="https://www.nics.go.kr/index.do" class="logo" title="www.hariwebsite" data-wm-linkcode="CO3">
+                <img class="logo_img" src="{{ url_for('static', filename='main.png') }}" alt="Highland Agriculture Research Institute">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('home') }}">
+                            메인
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{  url_for('cultivar_list') }}">
+                            품종명
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{  url_for('flesh_color') }}">
+                            육색
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h2>고령지농업연구소 감자 유전자원 데이터베이스</h2>
+            <hr class="line2" color="#006400">
+
+            <br>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Original image
+                        </td>
+                        <td>
+                            Background removed image
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{{ original_image }}" alt="Original Image" style="max-width: 500px;">
+                        </td>
+                        <td>
+                            <img src="{{ processed_image }}" alt="Processed Image" style="max-width: 500px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            RGB histogram
+                        </td>
+                        <td>
+                            Representative color
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{{ histogram }}" alt="Histogram" style="max-width: 500px;">
+                        </td>
+                        <td>
+                            <div class = color-box>
+                                <div style="width: 100px; height: 100px; background-color: rgb({{ mode_value_rgb['Red'] }}, {{ mode_value_rgb['Green'] }}, {{ mode_value_rgb['Blue'] }});"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+            <a href="{{ url_for('flesh_color') }}" class="upload-button">Upload Another Image</a>
+        </div>
+    </div>
+
+    <footer class="bottom">
+        <p>&copy; 2025 My Website. All rights reserved. Last update: 2025.02.12</p>
+    </footer>
+
+</body>
+</html>

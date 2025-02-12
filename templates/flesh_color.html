@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고령지농업연구소 감자 유전자원</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flesh_color.css') }}">
+</head>
+<body>
+    <div class="page">
+        <header class="site-header">
+            <div class="HARI-section">
+                <a href="https://www.nics.go.kr/index.do" class="logo" title="www.hariwebsite" data-wm-linkcode="CO3">
+                <img class="logo_img" src="{{ url_for('static', filename='main.png') }}" alt="Highland Agriculture Research Institute">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('home') }}">
+                            메인
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{  url_for('cultivar_list') }}">
+                            품종명
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{  url_for('flesh_color') }}">
+                            육색
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h2>고령지농업연구소 감자 유전자원 데이터베이스</h2>
+            <hr class="line2" color="#006400">
+            <ul>
+                <font size="4" style="font-weight: bold;">
+                    감자 대표색 추출
+                </font>
+                <br>
+                <font size="3" style="font-weight: bold;">
+                    ○ 배경이 선명한 이미지 파일 (png, jpg) 업로드
+                </font>
+            </ul>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="file" name="file" id="fileInput" accept="image/*" required onchange="previewImage(event)">
+                                <button type="submit">Upload</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="image-container">
+                                    <img id="preview" src="#" alt="Image Preview">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            
+            <script>
+                function previewImage(event) {
+                    let preview = document.getElementById('preview');
+                    let file = event.target.files[0];
+            
+                    if (file) {
+                        let reader = new FileReader();
+                        reader.onload = function (e) {
+                            preview.src = e.target.result;
+                            preview.style.display = "block";
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                }
+            </script>
+            
+        </div>
+    </div>
+
+    <footer class="bottom">
+        <p>&copy; 2025 My Website. All rights reserved. Last update: 2025.02.12</p>
+    </footer>
+
+</body>
+</html>

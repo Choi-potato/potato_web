@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 import numpy as np
-import matplotlib.pyplot as Plt
-import io
+import matplotlib.pyplot as plt
+from io import BytesIO
 import base64
 from markupsafe import escape
+import os
+from PIL import Image
+from rembg import remove
 
 app = Flask(__name__)
 
@@ -135,6 +138,42 @@ for key, value in cultivars_info.items():
     if 'alt_name' in value and value['alt_name']:
         search_mapping[value['alt_name']] = key
 
+
+#remove background image and convert to RGBA(Red Green Blue Alpha)
+def remove_background_from_memory(image_file):
+    input_image = image_file.read()
+    output_image = remove(input_image)
+    return Image.open(BytesIO(output_image)).convert("RGBA")
+
+#Extract RGB value
+def extract_rgb(image):
+    width, height = image.size
+    rgb_values = []
+    for x in range(width):
+        for y in range(height):
+            r, g, b, a = image.getpixel((x, y))
+            if a > 0:
+                rgb_values.append((r, g, b))
+    return np.array(rgb_values)
+
+def plot_histogram_and_find_mode(rgb_array):
+    plt.figure(figsize=(4, 4))
+    mode_values = {}
+    for i, color in enumerate(['Red', 'Green', 'Blue']):
+        counts, bins = np.histogram(rgb_array[:, i], bins=256, range=(0, 255))
+        mode_value = bins[np.argmax(counts)]
+        mode_values[color] = int(mode_value)
+        plt.hist(rgb_array[:, i], bins=256, color=color.lower(), alpha=0.6, label=f"{color} (Mode: {int(mode_value)})")
+    plt.xlabel('Color Value: 0 to 255')
+    plt.ylabel('Frequency')
+    plt.legend()
+    hist_io = BytesIO()
+    plt.savefig(hist_io, format="png", bbox_inches='tight')
+    plt.close()
+    hist_io.seek(0)
+    hist_base64 = base64.b64encode(hist_io.read()).decode("utf-8")
+    return f"data:image/png;base64,{hist_base64}", mode_values
+
 @app.route('/')
 def home():
     return render_template('main_page.html')
@@ -142,6 +181,10 @@ def home():
 @app.route('/cultivar_list')
 def cultivar_list():
     return render_template('cultivar_list.html')
+
+@app.route('/flesh_color')
+def flesh_color():
+    return render_template('flesh_color.html')
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -202,6 +245,35 @@ def cultivar_depth_detail(name, depth):
     elif depth == 1:
         return render_template('cultivar_detail.html', cultivar=cultivar_data)
     return render_template(f'cultivar_detail{depth}.html', cultivar=cultivar_data)
+
+@app.route('/upload', methods=['POST'])
+def upload_image():
+    if "file" not in request.files:
+        return "No file uploaded!", 400
+
+    file = request.files["file"]
+    
+    if file.filename == "":
+        return "No selected file", 400
+    
+    processed_image = remove_background_from_memory(file)
+
+    rgb_array = extract_rgb(processed_image)
+    hist_base64, mode_values = plot_histogram_and_find_mode(rgb_array)
+
+    original_io = BytesIO()
+    file.seek(0)
+    original_io.write(file.read())
+    original_io.seek(0)
+    original_base64 = base64.b64encode(original_io.read()).decode("utf-8")
+
+    processed_io = BytesIO()
+    processed_image.save(processed_io, format="PNG")
+    processed_io.seek(0)
+    processed_base64 = base64.b64encode(processed_io.read()).decode("utf-8")
+
+    return render_template('flesh_color_result.html', original_image=f"data:image/png;base64,{original_base64}", processed_image=f"data:image/png;base64,{processed_base64}", histogram=hist_base64, mode_value_rgb = mode_values)
+
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=False)
