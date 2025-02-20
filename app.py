@@ -128,6 +128,7 @@ cultivars_info = {
 search_mapping = {key.lower(): key for key in cultivars_info}
 
 UPLOAD_FOLDER = "img/"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 for key, value in cultivars_info.items():
     search_mapping[value['korean_name']] = key
 
