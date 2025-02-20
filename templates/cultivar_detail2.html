@@ -32,7 +32,7 @@
         </header>
 
         <div class="container">
-            <h2>고령지농업연구소 감자 유전자원 데이터베이스cv2</h2>
+            <h2>고령지농업연구소 감자 유전자원 데이터베이스</h2>
             <hr class="line2" color="#006400">
             <table>
                 <tr>
@@ -120,7 +120,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="{{ url_for('static', filename=cultivar.yield_graph) }}" alt="{{ cultivar.name }} yield graph" style="margin-top: 20px; max-width: 100%; height: auto;">
+                            <img src="{{ url_for('static', filename=cultivar.specific_gravity_graph) }}" alt="{{ cultivar.name }} specific gravity graph" style="margin-top: 20px; max-width: 100%; height: auto;">
                         </td>
                         <td style="text-align:left;">
                             <img src="{{ url_for('static', filename=cultivar.lw_graph) }}" alt="{{ cultivar.name }} length width ratio graph" style="margin-top: 20px; max-width: 100%; height: auto;">
@@ -128,7 +128,7 @@
                     </tr>
                     <tr>
                         <td style="text-align:center;">
-                            생산량 정규분포 그래프: 대조 수미
+                            비중 정규분포 그래프: 대조 수미
                         </td>
                         <td style="text-align:center;">
                             장폭비 정규분포 그래프: 대조 수미

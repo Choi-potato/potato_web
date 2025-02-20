@@ -90,21 +90,18 @@ h2 {
 
 table {
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     text-align: center;
-}
-
-td {
-    width: 50%;
-    padding: 10px;
-    border: 0px solid black;
+    table-layout: fixed;
     font-weight: bold;
-    text-align:center;
 }
 
-img {
-    max-width: 500px;
+td img {
+    max-width: 100%;
     height: auto;
+    display: block;
+    margin: auto;
 }
 
 .color-box {
@@ -112,7 +109,9 @@ img {
     height: 100px;
     display: flex;
     margin: auto;
-    align-items:center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
 }
 
 footer.bottom {
@@ -166,5 +165,23 @@ footer.bottom {
 
     form input[name="name"] {
         width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    td {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    td img {
+        max-width: 90%;
     }
 }

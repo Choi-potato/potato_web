@@ -16,7 +16,7 @@ for i in file:
     alt_english_name = contents[7]
     male = contents[8]
     female = contents[9]
-    yield_graph = 'graph/' + name + '_yield.png'
+    specific_gravity_graph = 'graph/' + name + '_specific_gravity.png'
     lw_graph = 'graph/' + name + '_lw.png'
     category = contents[10]
     market = contents[11]
@@ -35,7 +35,10 @@ for i in file:
     female_male_female = contents[24]
     female_female_male = contents[25]
     female_female_female = contents[26]
-    print("'"+ name + "'" + ' : {"name": "' + name + '", "korean_name": "' + korean_name + '", "it_number": "' + it_number + '", "yield": ' + str(yie) + ', "img": "' + img + '", "pedigree": "' + pedigree + '", "pedigree2": "' + pedigree2 + '", "pedigree3": "' + pedigree3 + '", "male": "' + male + '", "female": "' + female + '", "alt_name": "' + alt_name + '", "alt_english_name": "' + alt_english_name + '", "yield_graph": "' + yield_graph + '", "lw_graph": "' + lw_graph + '", "category": "' + category + '", "market": "' + market + '", "maturity": "' + maturity + '", "release_year": "' + release_year + '", "breeding_project": "' + breeding_project + '", "male_male": "' + male_male + '", "male_female": "' + male_female + '", "female_male": "' + female_male + '", "female_female": "' + female_male + '", "female_female": "' + female_female + '", "male_male_male": "' + male_male_male + '", "male_male_female": "' + male_male_female + '", "male_female_male": "' + male_female_male + '", "male_female_female": "' + male_female_female + '", "female_male_male": "' + female_male_male + '", "female_male_female": "' + female_male_female + '", "female_female_male": "' + female_female_male + '", "female_female_female": "' + female_female_female + '"},')
+    lw = contents[27]
+    specific_gravity = contents[28]
+    starch_content = contents[32]
+    print("'"+ name + "'" + ' : {"name": "' + name + '", "korean_name": "' + korean_name + '", "it_number": "' + it_number + '", "yield": ' + str(yie) + ', "img": "' + img + '", "pedigree": "' + pedigree + '", "pedigree2": "' + pedigree2 + '", "pedigree3": "' + pedigree3 + '", "male": "' + male + '", "female": "' + female + '", "alt_name": "' + alt_name + '", "alt_english_name": "' + alt_english_name + '", "specific_gravity_graph": "' + specific_gravity_graph + '", "lw_graph": "' + lw_graph + '", "category": "' + category + '", "market": "' + market + '", "maturity": "' + maturity + '", "release_year": "' + release_year + '", "breeding_project": "' + breeding_project + '", "male_male": "' + male_male + '", "male_female": "' + male_female + '", "female_male": "' + female_male + '", "female_female": "' + female_male + '", "female_female": "' + female_female + '", "male_male_male": "' + male_male_male + '", "male_male_female": "' + male_male_female + '", "male_female_male": "' + male_female_male + '", "male_female_female": "' + male_female_female + '", "female_male_male": "' + female_male_male + '", "female_male_female": "' + female_male_female + '", "female_female_male": "' + female_female_male + '", "female_female_female": "' + female_female_female + '"},')
 '''
     print('<tr>')
     print('\t' + '<td>' + name + '</td>')

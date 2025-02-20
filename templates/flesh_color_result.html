@@ -52,28 +52,26 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="{{ original_image }}" alt="Original Image" style="max-width: 500px;">
+                            <img src="{{ original_image }}" alt="Original Image">
                         </td>
                         <td>
-                            <img src="{{ processed_image }}" alt="Processed Image" style="max-width: 500px;">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            RGB histogram
-                        </td>
-                        <td>
-                            Representative color
+                            <img src="{{ processed_image }}" alt="Processed Image">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <img src="{{ histogram }}" alt="Histogram" style="max-width: 500px;">
+                            <br>RGB histogram
                         </td>
                         <td>
-                            <div class = color-box>
-                                <div style="width: 100px; height: 100px; background-color: rgb({{ mode_value_rgb['Red'] }}, {{ mode_value_rgb['Green'] }}, {{ mode_value_rgb['Blue'] }});"></div>
-                            </div>
+                            <br>Representative color
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{{ histogram }}" alt="Histogram">
+                        </td>
+                        <td>
+                            <div class="color-box" style="background-color: rgb({{ mode_value_rgb['Red'] }}, {{ mode_value_rgb['Green'] }}, {{ mode_value_rgb['Blue'] }});"></div>
                         </td>
                     </tr>
                 </tbody>
